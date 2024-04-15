@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "a5c172ea-0e0d-4c01-aa3b-a1e139de68aa",
+		"name": "Docker Env",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31112953"
+	},
+	"item": [
+		{
+			"name": "Platformservice",
+			"item": [
+				{
+					"name": "Get All Platforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/api/platform",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"platform"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Platform By Id",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASEURL}}/api/platform/4",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"platform",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Platform",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"NPM\",\r\n    \"publisher\": \"npm, Inc\",\r\n    \"cost\": \"free\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASEURL}}/api/platform",
+							"host": [
+								"{{BASEURL}}"
+							],
+							"path": [
+								"api",
+								"platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
