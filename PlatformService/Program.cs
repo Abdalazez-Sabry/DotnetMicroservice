@@ -25,4 +25,4 @@ app.MapDefaultControllerRoute();
 
 PrebDb.PrepPopulation(app);
 
-app.Run();
+app.Run("http://*:80");
