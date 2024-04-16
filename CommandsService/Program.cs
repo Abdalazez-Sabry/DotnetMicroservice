@@ -1,7 +1,3 @@
-using PlatformService.Data;
-using Microsoft.EntityFrameworkCore;
-using PlatformService.SyncDataService;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,10 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InMemory"));
-builder.Services.AddScoped<IPlatformRepo, PlatformRepo>();
-builder.Services.AddHttpClient<ICommandDataClient, HttpCommandDataClient>();
 
 var app = builder.Build();
 
@@ -27,8 +19,8 @@ else
     app.Urls.Add("http://*:80");
 }
 
+app.UseHttpsRedirection();
 app.MapDefaultControllerRoute();
 
-PrebDb.PrepPopulation(app);
-
 app.Run();
+
