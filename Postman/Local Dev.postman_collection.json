@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Platformservice",
+			"name": "Platform Service",
 			"item": [
 				{
 					"name": "Get All Platforms",
@@ -15,9 +15,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASEURL}}/api/platform",
+							"raw": "{{PLATFORM_BASE_URL}}/api/platform",
 							"host": [
-								"{{BASEURL}}"
+								"{{PLATFORM_BASE_URL}}"
 							],
 							"path": [
 								"api",
@@ -55,9 +55,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{BASEURL}}/api/platform/4",
+							"raw": "{{PLATFORM_BASE_URL}}/api/platform/4",
 							"host": [
-								"{{BASEURL}}"
+								"{{PLATFORM_BASE_URL}}"
 							],
 							"path": [
 								"api",
@@ -83,13 +83,37 @@
 							}
 						},
 						"url": {
-							"raw": "{{BASEURL}}/api/platform",
+							"raw": "{{PLATFORM_BASE_URL}}/api/platform",
 							"host": [
-								"{{BASEURL}}"
+								"{{PLATFORM_BASE_URL}}"
 							],
 							"path": [
 								"api",
 								"platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commands Service",
+			"item": [
+				{
+					"name": "Inbound test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
 							]
 						}
 					},
@@ -122,8 +146,13 @@
 	],
 	"variable": [
 		{
-			"key": "BASEURL",
+			"key": "PLATFORM_BASE_URL",
 			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "COMMANDS_BASE_URL",
+			"value": "",
 			"type": "string"
 		}
 	]
