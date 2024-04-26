@@ -19,7 +19,6 @@ else
     app.Urls.Add("http://*:80");
 }
 
-app.UseHttpsRedirection();
 app.MapDefaultControllerRoute();
 
 app.Run();
