@@ -101,6 +101,98 @@
 			"name": "Commands Service",
 			"item": [
 				{
+					"name": "Get all platforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get commands from a platform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/4/commands",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"4",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a command from a platform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/4/commands/1",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"4",
+								"commands",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create A Command",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HowTo\": \"Build a .Net project\",\r\n    \"CommandLine\": \"dotnet build\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/4/commands",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"4",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Inbound test",
 					"request": {
 						"method": "POST",

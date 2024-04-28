@@ -75,7 +75,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"NPM\",\r\n    \"publisher\": \"npm, Inc\",\r\n    \"cost\": \"free\"\r\n}",
+							"raw": "{\r\n    \"name\": \"kubectl\",\r\n    \"publisher\": \"Docker\",\r\n    \"cost\": \"free\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -90,6 +90,122 @@
 							"path": [
 								"api",
 								"platform"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commands Service",
+			"item": [
+				{
+					"name": "Get all platforms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get commands from a platform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/7/commands",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"7",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a command from a platform",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/5/commands/1",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"5",
+								"commands",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create A Command",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"HowTo\": \"Get current running pods\",\r\n    \"CommandLine\": \"kubectl get pods\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms/7/commands",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms",
+								"7",
+								"commands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Inbound test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{COMMANDS_BASE_URL}}/api/c/platforms",
+							"host": [
+								"{{COMMANDS_BASE_URL}}"
+							],
+							"path": [
+								"api",
+								"c",
+								"platforms"
 							]
 						}
 					},
@@ -125,6 +241,10 @@
 			"key": "BASEURL",
 			"value": "localhost:30254",
 			"type": "string"
+		},
+		{
+			"key": "COMMANDS_BASE_URL",
+			"value": "acme.com"
 		}
 	]
 }
