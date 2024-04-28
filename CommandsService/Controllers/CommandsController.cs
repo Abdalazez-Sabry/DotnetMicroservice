@@ -48,6 +48,7 @@ namespace CommandsService.Controllers
             Command createdCommand = _mapper.Map<Command>(inputCommand);
 
             _repository.CreateCommand(platformId, createdCommand);
+            _repository.SaveChanges();
 
             var readCommand = _mapper.Map<CommandReadDto>(createdCommand);
             return CreatedAtRoute(nameof(GetCommandForPlatform), new

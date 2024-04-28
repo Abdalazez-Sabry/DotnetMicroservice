@@ -16,6 +16,7 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameWorkCOre.InMemory" Version="8.0.4" />
     <PackageReference Include="Microsoft.EntityFrameWorkCore.SqlServer" Version="8.0.4" />
+    <PackageReference Include="Rabbitmq.Client" Version="6.8.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
